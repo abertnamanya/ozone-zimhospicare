@@ -1,0 +1,9 @@
+Uuid,Void/Retire,Name,Description,Format,Foreign,Searchable
+14d4f066-15f5-102d-96e4-000c29c2a5d7,0,Telephone Number,The telephone number for the person,java.lang.String,,,
+8b56eac7-5c76-4b9c-8c6f-1deab8d3fc47,,Unknown patient,Used to flag patients that cannot be identified during the check-in process,java.lang.String,,,
+c643c7e4-ffe5-4e17-95fe-e2599a019b1f,0,Email address,,java.lang.String,,,
+94614350-84c8-41e0-ac29-86bc107069be,0,Alternate phone number,,java.lang.String,,,
+830bef6d-b01f-449d-9f8d-ac0fede8dbd3,0,nextOfKinName,,java.lang.String,,,
+d0aa9fd1-2ac5-45d8-9c5e-4317c622c8f5,0,nextOfkinRelationsip,,java.lang.String,,,
+342a1d39-c541-4b29-8818-930916f4c2dc,0,nextOfkinPhone,,java.lang.String,,,
+7cf22bec-d90a-46ad-9f48-035952261294,0,nextOfKinAddress,,java.lang.String,,,

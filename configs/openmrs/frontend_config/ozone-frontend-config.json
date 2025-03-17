@@ -1,0 +1,252 @@
+{
+  "@openmrs/esm-primary-navigation-app": {
+    "externalRefLinks": [
+      {
+        "title": "Pharmacy, Billing & Inventory",
+        "redirect": "${ODOO_PUBLIC_URL}"
+      },
+      {
+        "title": "Laboratory",
+        "redirect": "${SENAITE_PUBLIC_URL}"
+      },
+      {
+        "title": "PACS",
+        "redirect": "${ORTHANC_PUBLIC_URL}"
+      },
+      {
+        "title": "Reporting & Analytics",
+        "redirect": "${SUPERSET_PUBLIC_URL}"
+      }
+    ],
+    "logo": {
+      "src": "configs/zim_logo.svg",
+      "alt": "zim-logo"
+    }
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+     "src": "configs/zim_logo.svg",
+      "alt": "zim-logo"
+    }
+  },
+  "@openmrs/esm-patient-chart-app": {
+    "logo": {
+     "src": "configs/zim_logo.svg",
+      "alt": "zim-logo"
+    }
+  },
+
+  "@openmrs/esm-patient-registration-app": {
+    "defaultPatientIdentifierTypes": [
+        "fcf5bde1-e6ce-4070-922c-ffc7712c7493",
+        "d45533e5-8509-48a4-bb7e-0c58fffaea30"
+    ],
+    "sections": [
+        "demographics",
+        "contact",
+        "nextOfKin"
+    ],
+    "sectionDefinitions": [
+      {
+        "id": "custom",
+        "name": "Demographics",
+        "fields": [
+            "maritalStatus"
+        ]
+    },
+    {
+            "id": "contact",
+            "name": "Contact Details",
+            "fields": [
+                "address",
+                "phone",
+                "alternatePhone",
+                "email"
+            ]
+        },
+        {
+            "id": "nextOfKin",
+            "name": "Next of Kin Details",
+            "fields": [
+                "nextOfKinName",
+                "nextOfkinRelationsip",
+                "nextOfkinPhone",
+                "nextOfKinAddress"
+            ]
+        }
+    ],
+    "fieldDefinitions": [
+      {
+        "id": "maritalStatus",
+        "type": "obs",
+        "uuid": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "label": "Marital status",
+        "validation": {
+            "required": true
+        },
+        "customConceptAnswers": [
+            {
+                "uuid": "159715AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "label": "Married polygamous"
+            },
+            {
+                "uuid": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "label": "Married monogamous"
+            },
+            {
+                "uuid": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "label": "Divorced"
+            },
+            {
+                "uuid": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "label": "Widowed"
+            },
+            {
+                "uuid": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "label": "Cohabiting"
+            },
+            {
+                "uuid": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "label": "Single"
+            }
+        ]
+    },
+      {
+        "id": "email",
+        "type": "person attribute",
+        "uuid": "c643c7e4-ffe5-4e17-95fe-e2599a019b1f",
+        "label": "Email address",
+        "validation": {
+            "matches": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+        }
+    },
+        {
+            "id": "alternatePhone",
+            "type": "person attribute",
+            "uuid": "94614350-84c8-41e0-ac29-86bc107069be",
+            "label": "Alternate phone number",
+            "validation": {
+                "matches": "^0([0-9](?:(?:[0-9][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$"
+            }
+        },
+        {
+            "id": "address.address1",
+            "type": "address",
+            "label": "Address"
+          },
+          {
+            "id": "address.address2",
+            "type": "address",
+            "label": "address 2"
+          },
+          {
+            "id": "address.cityVillage",
+            "type": "address",
+            "label": "City/Village"
+          },
+          {
+            "id": "address.country",
+            "type": "address",
+            "label": "Country"
+          },
+          {
+            "id": "address.stateProvince",
+            "type": "address",
+            "label": "State/Province"
+          },
+          {
+            "id": "address.postalCode",
+            "type": "address",
+            "label": "Postal Code"
+          },
+
+        {
+            "id": "nextOfKinName",
+            "type": "person attribute",
+            "uuid": "830bef6d-b01f-449d-9f8d-ac0fede8dbd3",
+            "label": "Name"
+        },
+        {
+            "id": "nextOfkinRelationsip",
+            "type": "person attribute",
+            "uuid": "d0aa9fd1-2ac5-45d8-9c5e-4317c622c8f5",
+            "label": "Relationship"
+        },
+        {
+            "id": "nextOfkinPhone",
+            "type": "person attribute",
+            "uuid": "342a1d39-c541-4b29-8818-930916f4c2dc",
+            "label": "Phone Number",
+            "validation": {
+                "matches": "^0([0-9](?:(?:[0-9][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$"
+            }
+        },
+        {
+            "id": "nextOfKinAddress",
+            "type": "person attribute",
+            "uuid": "7cf22bec-d90a-46ad-9f48-035952261294",
+            "label": "Postal Address"
+        }
+    ],
+    "fieldConfigurations": {
+        "gender": [
+            {
+                "value": "male",
+                "label": "Male"
+            },
+            {
+                "value": "female",
+                "label": "Female"
+            }
+        ],
+        "address": {
+            "useAddressHierarchy": {
+                "useAddressHierarchyLabel": {
+                    "country": "Country",
+                    "stateProvince": "stateProvince"
+                },
+                "searchAddressByLevel": true
+            }
+        },
+        "phone": {
+            "validation": {
+                "required": true,
+                "matches": "^0([0-9](?:(?:[0-9][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$"
+            }
+        }
+    }
+},
+"@kenyaemr/esm-billing-app": {
+  "extensionSlots": {
+      "billing-dashboard-slot": {}
+  },
+  "excludedPaymentMode": [
+      {
+          "uuid": "eb6173cb-9678-4614-bbe1-0ccf7ed9d1d4",
+          "label": "Waiver"
+      }
+  ],
+  "patientExemptionCategories": [
+      {
+          "value": "IN_PRISON",
+          "label": "In Prison"
+      },
+      {
+          "value": "UNDER_5",
+          "label": "Under 5"
+      },
+      {
+          "value": "CCC",
+          "label": "CCC"
+      },
+      {
+          "value": "REFUGEES",
+          "label": "Refugees"
+      },
+      {
+          "value": "ABOVE_60_YRS",
+          "label": "Above 60 years"
+      }
+  ]
+}
+}

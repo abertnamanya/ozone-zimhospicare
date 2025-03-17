@@ -1,0 +1,5 @@
+Uuid,Void/Retire,Name,Description,Required,Format,Format description,Validator,Location behavior,Uniqueness behavior
+05a29f94-c0ed-11e2-94be-8c13b969e334,,OpenMRS ID,"OpenMRS patient identifier, with check-digit",TRUE,,,org.openmrs.module.idgen.validator.LuhnMod30IdentifierValidator,NOT_USED,UNIQUE
+22348099-3873-459e-a32e-d93b17eda533,,Legacy ID,Identifier type to record optional previous identifers ,FALSE,,,,NOT_USED,
+fcf5bde1-e6ce-4070-922c-ffc7712c7493,,Zimbabwe ID,Zimbabwe ID,FALSE,\^\d{2}-\d{6}-[A-Z]\d{2}$,"Zimbabwe ID format Eg, 98-917811-Z19",,NOT_USED,UNIQUE
+d45533e5-8509-48a4-bb7e-0c58fffaea30,,Passport Number,Passport Number,FALSE,,,,NOT_USED,UNIQUE
